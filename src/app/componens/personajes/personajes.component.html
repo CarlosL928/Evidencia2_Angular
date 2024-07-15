@@ -1,0 +1,33 @@
+<p>Lista De personajes!!!</p>
+<mat-list role="list">
+  <button (click)="paginaAnterior()">Pagina Anterior</button>
+<button (click)="paginaSiguiente()">Siguiente pagina</button>
+
+   
+    @for (personaje of personajes.results; track $index) { 
+                                          
+        
+        <mat-card class="example-card" (click)="openDialog(personaje.id)">
+            <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>{{personaje.name}}</mat-card-title>
+            <mat-card-subtitle>{{personaje.species}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="personaje.image" alt="">
+            <mat-card-content>
+              
+            
+                <ul>
+            <li>origen: {{personaje.origin.name}}</li>
+            <li>Status: {{personaje.status}}</li>
+            <li>Location: {{personaje.location.name}}</li>
+              </ul>
+            
+            </mat-card-content>
+            </mat-card>
+       
+           
+    }
+    
+  </mat-list>
+
